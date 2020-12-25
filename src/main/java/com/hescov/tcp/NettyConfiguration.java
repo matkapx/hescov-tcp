@@ -45,7 +45,8 @@ public class NettyConfiguration {
 
     @Bean
     public InetSocketAddress tcpSocketAddress() {
-        return new InetSocketAddress(nettyProperties.getTcpPort());
+        return new InetSocketAddress(Integer.valueOf(System.getenv("PORT")));
+        //return new InetSocketAddress(nettyProperties.getTcpPort());
     }
 
     @Bean
